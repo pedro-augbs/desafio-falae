@@ -11,6 +11,8 @@ import fastifySwaggerUI from "@fastify/swagger-ui";
 
 import { initDatabase } from "./lib/prisma";
 
+import { registerUser } from "./handlers/user/register";
+
 const port = 3333;
 const host = "0.0.0.0";
 
@@ -41,6 +43,8 @@ app.register(fastifySwagger, {
 app.register(fastifySwaggerUI, {
 	routePrefix: "/docs",
 });
+
+app.register(registerUser);
 
 initDatabase()
 	.then(() => {
