@@ -30,7 +30,7 @@ model Order {
   id         String      @id @default(uuid())
   userId     String
   totalPrice Float
-  status     String
+  status     String      @default("pending")
   createdAt  DateTime    @default(now())
   orderItem  OrderItem[]
 
