@@ -16,6 +16,7 @@ import { registerUser } from "./handlers/user/register";
 import { registerProducts } from "./handlers/products/register";
 import { getAllProducts } from "./handlers/products/get-all";
 import { getProducts } from "./handlers/products/get";
+import { updateProducts } from "./handlers/products/update";
 
 const port = 3333;
 const host = "0.0.0.0";
@@ -49,9 +50,11 @@ app.register(fastifySwaggerUI, {
 });
 
 app.register(registerUser);
+
 app.register(registerProducts);
 app.register(getAllProducts);
 app.register(getProducts);
+app.register(updateProducts);
 
 initDatabase()
 	.then(() => {
