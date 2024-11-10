@@ -17,6 +17,7 @@ import { registerProducts } from "./handlers/products/register";
 import { getAllProducts } from "./handlers/products/get-all";
 import { getProducts } from "./handlers/products/get";
 import { updateProducts } from "./handlers/products/update";
+import { deleteProducts } from "./handlers/products/delete";
 
 const port = 3333;
 const host = "0.0.0.0";
@@ -55,6 +56,7 @@ app.register(registerProducts);
 app.register(getAllProducts);
 app.register(getProducts);
 app.register(updateProducts);
+app.register(deleteProducts);
 
 initDatabase()
 	.then(() => {
