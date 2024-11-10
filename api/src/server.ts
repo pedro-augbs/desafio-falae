@@ -13,6 +13,7 @@ import { initDatabase } from "./lib/prisma";
 
 import { registerUser } from "./handlers/user/register";
 import { registerProducts } from "./handlers/products/register";
+import { getAllProducts } from "./handlers/products/get-all";
 
 const port = 3333;
 const host = "0.0.0.0";
@@ -47,6 +48,7 @@ app.register(fastifySwaggerUI, {
 
 app.register(registerUser);
 app.register(registerProducts);
+app.register(getAllProducts);
 
 initDatabase()
 	.then(() => {
