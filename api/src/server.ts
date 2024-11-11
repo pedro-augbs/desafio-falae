@@ -20,6 +20,7 @@ import { updateProducts } from "./handlers/products/update";
 import { deleteProducts } from "./handlers/products/delete";
 
 import { registerOrders } from "./handlers/orders/register";
+import { getOrders } from "./handlers/orders/get";
 
 const port = 3333;
 const host = "0.0.0.0";
@@ -61,6 +62,7 @@ app.register(updateProducts);
 app.register(deleteProducts);
 
 app.register(registerOrders);
+app.register(getOrders);
 
 initDatabase()
 	.then(() => {
