@@ -8,13 +8,12 @@ datasource db {
 }
 
 model User {
-  id       String  @id @default(uuid())
-  email    String  @unique
-  name     String
-  address  String
-  phone    String?
-  password String
-  order    Order[]
+  id      String  @id @default(uuid())
+  email   String  @unique
+  name    String
+  address String
+  phone   String?
+  order   Order[]
 }
 
 model Product {
