@@ -32,17 +32,15 @@ model Order {
   totalPrice Float
   status     String      @default("pending")
   createdAt  DateTime    @default(now())
+  user       User        @relation(fields: [userId], references: [id])
   orderItem  OrderItem[]
-
-  user User @relation(fields: [userId], references: [id])
 }
 
 model OrderItem {
-  id        String @id @default(uuid())
+  id        String  @id @default(uuid())
   quantity  Int
   orderId   String
   productId String
-
-  order   Order   @relation(fields: [orderId], references: [id])
-  product Product @relation(fields: [productId], references: [id])
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  order     Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
 }
