@@ -33,14 +33,14 @@ Certifique-se de ter instalados:
 1. **Clone o repositório**  
    Clone o repositório em sua máquina local:  
    ```bash
-   git clone https://github.com/seu-usuario/desafio-falae.git
+   git clone https://github.com/pedro-augbs/desafio-falae.git
    cd desafio-falae
 
 2. **Instale as dependências**
    Certifique-se de instalar as dependências em ambos os diretórios (api e web):
    ```bash
    # Instale as dependências da API
-   cd desafio-falae/api
+   cd api
    npm install
 
    # Instale as dependências do frontend
@@ -55,17 +55,17 @@ Certifique-se de ter instalados:
 4. Execute as migrações do banco de dados
    Inicialize o banco de dados e aplique as migrações:
    ```bash
-   cd desafio-falae/api
+   cd api
    npx prisma migrate dev --name init
 
 5. Inicie os servidores
    ```bash
    # Para iniciar o backend:
-   cd desafio-falae/api
+   cd api
    npm run dev
 
    # Para iniciar o frontend:
-   cd desafio-falae/web
+   cd web
    npm run dev
 
 6. Acesse a aplicação
